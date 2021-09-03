@@ -5,6 +5,7 @@ computerSelection = computerPlay();
 
 playerSelection2 = capitalize(playerSelection);
 
+//converte qualquer entrada do usuário no formato padrão capitalizado
 function capitalize(playerSelection){
     playerSelection = playerSelection.toLowerCase();
     let capital = playerSelection.charAt(0).toUpperCase();
@@ -12,12 +13,14 @@ function capitalize(playerSelection){
     return playerSelection
 }
 
+//cria a escolha aleatória do adversário computador
 function computerPlay(){
     possibilidades = ['', 'Pedra', 'Tesoura', 'Papel'];
     numeroAleatorio = Math.floor(Math.random()*3) + 1;
     return possibilidades[numeroAleatorio];
 }
 
+//define o resultado do jogo e retorna o resultado
 function round(playerSelection2, computerSelection){
     if(computerSelection === 'Pedra' && playerSelection2 === 'Tesoura'){
         return 'Você Perdeu, Pedra quebra Tesoura.'
@@ -44,6 +47,7 @@ function round(playerSelection2, computerSelection){
     }
 }
 
+//cria 5 partidas e reinicializa a escolha do computador
 function game() {
     for(let i = 0; i <= 5; i++){
         let result = round(playerSelection2, computerSelection);
